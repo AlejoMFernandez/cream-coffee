@@ -1,0 +1,508 @@
+{
+  "$schema": "https://raw.githubusercontent.com/AlejoMFernandez/kit-demos/main/docs/cliente.schema.json",
+  "id": "cream-coffee",
+  "nombre": "CREAM",
+  "pais": "AR",
+  "idioma": "es",
+  "modo": "demo",
+  "whatsapp": "5491100000000",
+  "prefijoPedido": "CR",
+  "supabase": {
+    "url": "",
+    "anonKey": ""
+  },
+  "marca": {
+    "logo": "img/logo-azul.svg",
+    "logoPanel": "img/logo-azul.svg",
+    "favicon": "img/favicon.png",
+    "colores": {
+      "fondo": "#FEF4E3",
+      "superficie": "#FFFFFF",
+      "texto": "#172131",
+      "primario": "#F5D000",
+      "sobrePrimario": "#172131",
+      "acento": "#295A85",
+      "sobreAcento": "#FEF4E3",
+      "borde": "#172131"
+    },
+    "fuentes": {
+      "titulos": "'Anton', Impact, 'Arial Narrow', sans-serif",
+      "texto": "'Outfit', system-ui, sans-serif",
+      "googleFonts": ""
+    },
+    "estilo": {
+      "forma": "pildora",
+      "sombra": "suave",
+      "borde": "2px",
+      "mayusculas": true
+    }
+  },
+  "modulos": {
+    "carta": true,
+    "carrito": true,
+    "reservas": false,
+    "admin": true
+  },
+  "horarios": {
+    "lun": [
+      [
+        "08:30",
+        "19:30"
+      ]
+    ],
+    "mar": [
+      [
+        "08:30",
+        "19:30"
+      ]
+    ],
+    "mie": [
+      [
+        "08:30",
+        "19:30"
+      ]
+    ],
+    "jue": [
+      [
+        "08:30",
+        "19:30"
+      ]
+    ],
+    "vie": [
+      [
+        "08:30",
+        "19:30"
+      ]
+    ],
+    "sab": [
+      [
+        "10:00",
+        "19:00"
+      ]
+    ],
+    "dom": []
+  },
+  "sucursales": [
+    {
+      "id": "devoto",
+      "nombre": "Devoto",
+      "direccion": "Av. Francisco Beiró 4475",
+      "barrio": "Villa Devoto",
+      "whatsapp": "",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Av.+Francisco+Beir%C3%B3+4475%2C+Villa+Devoto%2C+CABA",
+      "horarios": {
+        "lun": [
+          [
+            "08:30",
+            "19:30"
+          ]
+        ],
+        "mar": [
+          [
+            "08:30",
+            "19:30"
+          ]
+        ],
+        "mie": [
+          [
+            "08:30",
+            "19:30"
+          ]
+        ],
+        "jue": [
+          [
+            "08:30",
+            "19:30"
+          ]
+        ],
+        "vie": [
+          [
+            "08:30",
+            "19:30"
+          ]
+        ],
+        "sab": [
+          [
+            "10:00",
+            "19:00"
+          ]
+        ],
+        "dom": []
+      }
+    },
+    {
+      "id": "ramos",
+      "nombre": "Ramos Mejía",
+      "direccion": "Av. Gral. San Martín 355",
+      "barrio": "Ramos Mejía",
+      "whatsapp": "",
+      "mapa": "https://www.google.com/maps/search/?api=1&query=Av.+San+Mart%C3%ADn+355%2C+Ramos+Mej%C3%ADa",
+      "horarios": {
+        "lun": [
+          [
+            "08:30",
+            "19:30"
+          ]
+        ],
+        "mar": [
+          [
+            "08:30",
+            "19:30"
+          ]
+        ],
+        "mie": [
+          [
+            "08:30",
+            "19:30"
+          ]
+        ],
+        "jue": [
+          [
+            "08:30",
+            "19:30"
+          ]
+        ],
+        "vie": [
+          [
+            "08:30",
+            "19:30"
+          ]
+        ],
+        "sab": [
+          [
+            "10:00",
+            "19:00"
+          ]
+        ],
+        "dom": []
+      }
+    }
+  ],
+  "pedidos": {
+    "salidas": [
+      "whatsapp",
+      "mercadopago"
+    ],
+    "tipos": [
+      "retiro"
+    ],
+    "envio": 0,
+    "minimo": 0
+  },
+  "pagos": {
+    "mercadopago": {
+      "endpoint": "https://kit-demos-amf.vercel.app/api/mp-preference",
+      "modo": "sandbox"
+    }
+  },
+  "carta": {
+    "categorias": [
+      {
+        "id": "promos",
+        "nombre": "Promos",
+        "orden": 1
+      },
+      {
+        "id": "calientes",
+        "nombre": "Cafecito caliente",
+        "orden": 2
+      },
+      {
+        "id": "frios",
+        "nombre": "Cafecito frío",
+        "orden": 3
+      },
+      {
+        "id": "cookies",
+        "nombre": "Cookies NY",
+        "orden": 4
+      },
+      {
+        "id": "laminados",
+        "nombre": "Laminados",
+        "orden": 5
+      },
+      {
+        "id": "chambuchitos",
+        "nombre": "Chambuchitos",
+        "orden": 6
+      },
+      {
+        "id": "casa",
+        "nombre": "Para casa",
+        "orden": 7
+      }
+    ],
+    "productos": [
+      {
+        "id": "promo-flat-x2",
+        "categoria": "promos",
+        "nombre": "Promo 2 flat white",
+        "descripcion": "Dos flat white para compartir.",
+        "precio": 15000,
+        "foto": "img/p-flat-x2.webp"
+      },
+      {
+        "id": "promo-latte-x2",
+        "categoria": "promos",
+        "nombre": "Promo 2 lattes",
+        "descripcion": "Dos lattes para compartir.",
+        "precio": 15000,
+        "foto": "img/p-latte-x2.webp"
+      },
+      {
+        "id": "promo-latte-cookie",
+        "categoria": "promos",
+        "nombre": "Latte + cookie choco chips",
+        "descripcion": "La combinación que más piden, ahora en promo.",
+        "precio": 15000,
+        "foto": "img/p-latte-cookie.webp",
+        "etiquetas": [
+          "top"
+        ]
+      },
+      {
+        "id": "promo-pedacito",
+        "categoria": "promos",
+        "nombre": "Para vos y el que solo quiere un pedacito",
+        "descripcion": "2 lattes + 1 cookie choco chips, para compartir con tu amigo/a que \"solo quiere un pedacito\".",
+        "precio": 22500,
+        "foto": "img/p-pedacito.webp"
+      },
+      {
+        "id": "americano",
+        "categoria": "calientes",
+        "nombre": "Americano 8 oz",
+        "descripcion": "Agua caliente sobre dos espressos. Más suave y menos intenso.",
+        "precio": 6100,
+        "foto": "img/p-americano.webp",
+        "etiquetas": [
+          "top"
+        ]
+      },
+      {
+        "id": "cappuccino",
+        "categoria": "calientes",
+        "nombre": "Cappuccino 8 oz",
+        "descripcion": "Espresso con leche y una capa de espuma. Intenso y cremoso.",
+        "precio": 7100,
+        "foto": "img/p-cappuccino.webp"
+      },
+      {
+        "id": "lagrima",
+        "categoria": "calientes",
+        "nombre": "Lágrima 8 oz",
+        "descripcion": "Medio espresso con leche. Suave y sutil.",
+        "precio": 7100,
+        "foto": "img/p-lagrima.webp",
+        "etiquetas": [
+          "top"
+        ]
+      },
+      {
+        "id": "latte",
+        "categoria": "calientes",
+        "nombre": "Latte 12 oz",
+        "descripcion": "Espresso con leche y una fina capa de espuma. El café con leche, bien hecho.",
+        "precio": 7500,
+        "foto": "img/p-latte.webp"
+      },
+      {
+        "id": "flat-white",
+        "categoria": "calientes",
+        "nombre": "Flat white (cortado) 8 oz",
+        "descripcion": "Dos espressos con leche. Intenso y balanceado.",
+        "precio": 7500,
+        "foto": "img/p-flat.webp",
+        "etiquetas": [
+          "top"
+        ]
+      },
+      {
+        "id": "flat-caramel",
+        "categoria": "calientes",
+        "nombre": "Flat white caramel 12 oz",
+        "descripcion": "Dos espressos con leche y syrup de caramelo.",
+        "precio": 8500,
+        "foto": "img/p-flat-caramel.webp",
+        "etiquetas": [
+          "top"
+        ]
+      },
+      {
+        "id": "flat-vainilla",
+        "categoria": "calientes",
+        "nombre": "Flat white vainilla 12 oz",
+        "descripcion": "Dos espressos con leche y syrup de vainilla.",
+        "precio": 8500,
+        "foto": "img/p-flat-vainilla.webp"
+      },
+      {
+        "id": "mokaccino",
+        "categoria": "calientes",
+        "nombre": "Mokaccino",
+        "descripcion": "Uno de los cafecitos más pedidos.",
+        "precio": null
+      },
+      {
+        "id": "filtrado",
+        "categoria": "calientes",
+        "nombre": "Filtrado V60",
+        "descripcion": "El grano de la semana, filtradito.",
+        "precio": null
+      },
+      {
+        "id": "cocoa-melt",
+        "categoria": "calientes",
+        "nombre": "Cocoa melt",
+        "descripcion": "Chocolate caliente, para los días de lluvia.",
+        "precio": null
+      },
+      {
+        "id": "cold-brew",
+        "categoria": "frios",
+        "nombre": "Cold brew",
+        "descripcion": "16 horas de maceración en frío.",
+        "precio": null,
+        "foto": "img/p-cold-brew.webp"
+      },
+      {
+        "id": "iced-latte",
+        "categoria": "frios",
+        "nombre": "Iced latte",
+        "descripcion": "El latte de siempre, con hielo.",
+        "precio": null,
+        "foto": "img/p-iced-latte.webp"
+      },
+      {
+        "id": "lemon-espresso",
+        "categoria": "frios",
+        "nombre": "Lemon espresso",
+        "descripcion": "Almíbar de limón, soda y doble espresso.",
+        "precio": null,
+        "foto": "img/p-lemon-espresso.webp"
+      },
+      {
+        "id": "agua-jamaica",
+        "categoria": "frios",
+        "nombre": "Agua de jamaica",
+        "descripcion": "Infusión fría de hibiscus.",
+        "precio": null,
+        "foto": "img/p-jamaica.webp"
+      },
+      {
+        "id": "cookie-chocochips",
+        "categoria": "cookies",
+        "nombre": "Cookie choco chips",
+        "descripcion": "Estilo New York, bien cargada. Stock semanal limitado.",
+        "precio": null,
+        "foto": "img/p-cookie-chocochips.webp"
+      },
+      {
+        "id": "cookie-semana",
+        "categoria": "cookies",
+        "nombre": "Cookies de la semana",
+        "descripcion": "Red velvet, doble chocolate y las que salgan. Preguntá qué hay hoy.",
+        "precio": null,
+        "foto": "img/p-cookies-semana.webp"
+      },
+      {
+        "id": "medialuna",
+        "categoria": "laminados",
+        "nombre": "Medialuna pura manteca",
+        "descripcion": "Dicen que son las mejores de Ramos.",
+        "precio": null,
+        "foto": "img/p-medialuna.webp"
+      },
+      {
+        "id": "croissant",
+        "categoria": "laminados",
+        "nombre": "Croissant",
+        "descripcion": "La era de los laminados.",
+        "precio": null,
+        "foto": "img/p-croissant.webp",
+        "etiquetas": [
+          "devoto"
+        ]
+      },
+      {
+        "id": "french-toast",
+        "categoria": "laminados",
+        "nombre": "French toast",
+        "descripcion": "Brioche, crema inglesa y frutos rojos. Creación de nuestro barista.",
+        "precio": null,
+        "foto": "img/p-french-toast.webp",
+        "etiquetas": [
+          "devoto"
+        ]
+      },
+      {
+        "id": "bowl",
+        "categoria": "laminados",
+        "nombre": "Bowl de yogurt",
+        "descripcion": "Yogurt casero, fruta y granola.",
+        "precio": null,
+        "foto": "img/p-bowl.webp",
+        "etiquetas": [
+          "devoto"
+        ]
+      },
+      {
+        "id": "prensado-jyq",
+        "categoria": "chambuchitos",
+        "nombre": "Chambuchito prensado J&Q",
+        "descripcion": "Jamón y queso, prensado. Con filtrado de 8:30 a 12 tenés refill sin cargo.",
+        "precio": null,
+        "foto": "img/p-prensado.webp"
+      },
+      {
+        "id": "focaccia-crudo",
+        "categoria": "chambuchitos",
+        "nombre": "Focaccia queso y crudo",
+        "descripcion": "Fermentación lenta, mirá esos alvéolos.",
+        "precio": null,
+        "foto": "img/p-focaccia-crudo.webp"
+      },
+      {
+        "id": "focaccia-ahumado",
+        "categoria": "chambuchitos",
+        "nombre": "Focaccia queso y ahumado",
+        "descripcion": "La misma focaccia, con jamón ahumado.",
+        "precio": null,
+        "foto": "img/p-focaccia-ahumado.webp"
+      },
+      {
+        "id": "cafe-cuarto",
+        "categoria": "casa",
+        "nombre": "¼ kg de café",
+        "descripcion": "En grano o molido para tu método: contanos cuál usás en la nota.",
+        "precio": null,
+        "foto": "img/p-cafe-cuarto.webp"
+      },
+      {
+        "id": "pancitos",
+        "categoria": "casa",
+        "nombre": "Pancitos por encargo",
+        "descripcion": "Pedidos anticipados de pan brioche. Avisanos qué día pasás.",
+        "precio": null,
+        "foto": "img/p-brioche.webp"
+      }
+    ]
+  },
+  "textos": {
+    "tuPedido": "Tu ticket",
+    "verPedido": "Tu ticket",
+    "agregar": "Sumar",
+    "retiro": "Paso a buscarlo",
+    "enviarPedido": "Mandar pedido",
+    "pagar": "Pagar y mandar",
+    "pedidoListo": "¡Ya lo tenemos!",
+    "pedidoListoSub": "Tu código es {codigo}. Te lo preparamos al toque y te avisamos por WhatsApp.",
+    "carritoVacio": "Ticket vacío.",
+    "carritoVacioSub": "¿Un cafecito? Elegí algo de la carta y aparece acá.",
+    "noDisponible": "Volaron, pronto hay más",
+    "notaPedido": "Nota (a qué hora pasás, tu método…)",
+    "waPedido": "Hola {negocio}! Quiero pasar a buscar esto:",
+    "seguir": "Seguir mirando"
+  }
+}

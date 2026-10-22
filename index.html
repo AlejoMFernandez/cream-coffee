@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CREAM · Café de especialidad en Villa Devoto y Ramos Mejía</title>
+<meta name="description" content="CREAM, café de especialidad: filtrados, flat whites, cookies estilo New York y medialunas pura manteca. Av. Francisco Beiró 4475 (Villa Devoto) y Av. San Martín 355 (Ramos Mejía). Pedí online y pasá a buscar.">
+<meta name="theme-color" content="#295A85">
+<meta property="og:title" content="CREAM · Lo que otros no se animan a hacer">
+<meta property="og:description" content="Café de especialidad en Villa Devoto y Ramos Mejía. Pedí online y pasá a buscar.">
+<meta property="og:image" content="https://cream-coffee.vercel.app/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://cream-coffee.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" data-kit-fonts href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Outfit:wght@300;400;500;600;700;800&amp;display=swap">
+<link rel="preload" as="image" href="img/hero-espalda-800.webp" media="(max-width: 767px)">
+<link rel="preload" as="image" href="img/hero-espalda-1400.webp" media="(min-width: 768px)">
+<script>
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('con-intro');
+  })();
+</script>
+<link rel="stylesheet" href="kit/kit.css?v=2">
+<link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+<!-- INTRO: el sello que golpea -->
+<div class="intro" aria-hidden="true">
+  <div class="intro__toldo">
+    <div class="intro__sello"><img src="img/logo-negro.svg" alt="" width="200" height="46"></div>
+    <img class="intro__logo" src="img/logo-amarillo.svg" alt="" width="300" height="69">
+    <p class="intro__bajada"><span>Café de especialidad</span><span>y otras cositas…</span></p>
+  </div>
+</div>
+
+<a class="saltar" href="#carta">Ir a la carta</a>
+
+<header class="barra" data-barra>
+  <div class="barra__in">
+    <a class="barra__logo" href="#inicio" aria-label="CREAM, inicio"><img src="img/logo-amarillo.svg" alt="CREAM" width="150" height="35"></a>
+    <nav class="barra__nav" aria-label="Secciones">
+      <a href="#carta">Carta</a>
+      <a href="#tarjetita">Tarjetita</a>
+      <a href="#veredita">La veredita</a>
+      <a href="#picnic">Picnic</a>
+      <a href="#locales">Locales</a>
+    </nav>
+    <div class="barra__acc">
+      <a class="btn btn--amarillo barra__pedi" href="#carta">Pedí</a>
+      <button type="button" class="barra__menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu" data-menu-abrir>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <div class="menu__in">
+    <button type="button" class="menu__x" aria-label="Cerrar menú" data-menu-cerrar><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <nav aria-label="Menú">
+      <a href="#carta" style="--d:0">Carta</a>
+      <a href="#tarjetita" style="--d:1">Tu tarjetita</a>
+      <a href="#veredita" style="--d:2">La veredita</a>
+      <a href="#cafe-posta" style="--d:3">Café posta</a>
+      <a href="#picnic" style="--d:4">Picnic</a>
+      <a href="#locales" style="--d:5">Las 2 CREAMs</a>
+    </nav>
+    <img class="menu__masc" src="img/mascota.webp" alt="" width="424" height="362">
+  </div>
+</div>
+
+<main id="inicio">
+
+  <!-- HERO A: la espalda -->
+  <section class="hero" aria-labelledby="hero-t">
+    <figure class="hero__foto">
+      <picture>
+        <source media="(min-width: 768px)" srcset="img/hero-espalda-1400.webp" width="1400" height="1866">
+        <img src="img/hero-espalda-800.webp" alt="Barista de espaldas con el buzo de CREAM, en la barra" width="800" height="1422" fetchpriority="high">
+      </picture>
+    </figure>
+    <span class="hero__sticker">Café de especialidad</span>
+    <div class="hero__caja">
+      <h1 id="hero-t" class="hero__t"><span class="linea"><span>Lo que otros</span></span> <span class="linea"><span>no se animan</span></span> <span class="linea"><span>a hacer.</span></span></h1>
+      <p class="hero__sub">Flatsitos, cookies estilo New York y medialunas pura manteca. En Devoto y en Ramos.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--amarillo btn--grande" href="#carta">Pedí y pasá a buscar</a>
+        <a class="btn btn--linea" href="#carta">Ver la carta</a>
+      </div>
+      <p class="hero__estado" data-estado><span class="punto" aria-hidden="true"></span><span data-estado-txt>Lun a vie 8:30 a 19:30 · Sáb 10 a 19</span></p>
+    </div>
+  </section>
+
+  <!-- CINTA de frases (se puede frenar y arrastrar) -->
+  <div class="cinta" data-cinta aria-label="Frases de CREAM">
+    <div class="cinta__pista" data-cinta-pista>
+      <span>El azúcar no endulza, tapa</span><i aria-hidden="true">✦</i>
+      <span>El café no es amargo, está mal preparado</span><i aria-hidden="true">✦</i>
+      <span>Nos cagar*n a ped*s</span><i aria-hidden="true">✦</i>
+      <span>Otro día en la ofi</span><i aria-hidden="true">✦</i>
+      <span>Si no venís, vos te lo perdés</span><i aria-hidden="true">✦</i>
+    </div>
+  </div>
+
+  <!-- LOS MÁS PEDIDOS -->
+  <section class="sec top" id="top" aria-labelledby="top-t">
+    <div class="envase">
+      <header class="cab rv">
+        <p class="ceja">Los más pedidos</p>
+        <h2 id="top-t" class="titulo">Sumalo y pasá a buscarlo</h2>
+      </header>
+    </div>
+    <div class="fila" data-arrastre>
+      <div class="fila__pista">
+        <article class="pola rv" style="--r:-2deg;--d:0" data-prod="flat-white">
+          <img src="img/p-flat.webp" alt="Flat white en taza negra" width="560" height="700" loading="lazy" decoding="async">
+          <div class="pola__pie"><h3>Flat white</h3><span class="pola__precio" data-precio="flat-white">$7.500</span></div>
+          <div class="pola__qty" data-kit-qty="flat-white"></div>
+        </article>
+        <article class="pola rv" style="--r:1.5deg;--d:1" data-prod="promo-latte-cookie">
+          <img src="img/p-latte-cookie.webp" alt="Cookies y un espresso en la vereda" width="560" height="700" loading="lazy" decoding="async">
+          <div class="pola__pie"><h3>Latte + cookie</h3><span class="pola__precio" data-precio="promo-latte-cookie">$15.000</span></div>
+          <div class="pola__qty" data-kit-qty="promo-latte-cookie"></div>
+        </article>
+        <article class="pola rv" style="--r:-1deg;--d:2" data-prod="flat-caramel">
+          <img src="img/p-flat-caramel.webp" alt="Flat white caramel con latte art" width="560" height="700" loading="lazy" decoding="async">
+          <div class="pola__pie"><h3>Flat caramel</h3><span class="pola__precio" data-precio="flat-caramel">$8.500</span></div>
+          <div class="pola__qty" data-kit-qty="flat-caramel"></div>
+        </article>
+        <article class="pola rv" style="--r:2deg;--d:3" data-prod="americano">
+          <img src="img/p-americano.webp" alt="Espresso cayendo en un vaso" width="560" height="700" loading="lazy" decoding="async">
+          <div class="pola__pie"><h3>Americano</h3><span class="pola__precio" data-precio="americano">$6.100</span></div>
+          <div class="pola__qty" data-kit-qty="americano"></div>
+        </article>
+        <article class="pola rv" style="--r:-2.5deg;--d:4" data-prod="lagrima">
+          <img src="img/p-lagrima.webp" alt="Lágrima en taza negra" width="560" height="700" loading="lazy" decoding="async">
+          <div class="pola__pie"><h3>Lágrima</h3><span class="pola__precio" data-precio="lagrima">$7.100</span></div>
+          <div class="pola__qty" data-kit-qty="lagrima"></div>
+        </article>
+        <article class="pola rv" style="--r:1deg;--d:5" data-prod="promo-pedacito">
+          <img src="img/p-pedacito.webp" alt="Cookie choco chips en la mano" width="560" height="700" loading="lazy" decoding="async">
+          <div class="pola__pie"><h3>Para compartir</h3><span class="pola__precio" data-precio="promo-pedacito">$22.500</span></div>
+          <div class="pola__qty" data-kit-qty="promo-pedacito"></div>
+        </article>
+      </div>
+    </div>
+    <p class="envase fila__ayuda" aria-hidden="true">← Deslizá →</p>
+  </section>
+
+  <!-- CARTA -->
+  <section class="sec carta" id="carta" aria-labelledby="carta-t">
+    <div class="envase">
+      <header class="cab rv">
+        <p class="ceja">La carta</p>
+        <h2 id="carta-t" class="titulo">Pedí online, pasá a buscar</h2>
+        <p class="cab__txt">Sin fila y sin comisión de app. Elegís en cuál CREAM lo retirás al mandar el pedido.</p>
+      </header>
+      <div class="carta__marco rv">
+        <div class="carta__cab" data-cab>
+          <h3 data-cab-titulo>Promos</h3>
+          <p data-cab-sub></p>
+        </div>
+        <div class="carta__kit" data-kit="carta"></div>
+        <div class="carta__pie">
+          <button type="button" class="carta__nav" data-prev hidden><span aria-hidden="true">←</span> <span data-prev-txt></span></button>
+          <button type="button" class="carta__nav carta__nav--sig" data-next hidden><span data-next-txt></span> <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+      <p class="nota rv">Precios de cafés y promos de su carta actual. Lo marcado "Consultar" se confirma con el local.</p>
+      <a class="panel-link rv" href="admin/" target="_blank" rel="noopener">¿Sos de CREAM? Probá el panel del dueño →</a>
+    </div>
+  </section>
+
+  <!-- TARJETITA DE SELLOS -->
+  <section class="sec sellos" id="tarjetita" aria-labelledby="sellos-t">
+    <div class="envase sellos__in">
+      <header class="cab cab--claro rv">
+        <p class="ceja">La tarjetita, ahora en tu celu</p>
+        <h2 id="sellos-t" class="titulo">10 cafecitos, el próximo va de onda</h2>
+        <p class="cab__txt">Cada pedido con café la sella solo. Si pedís en la caja, te la sellan igual que la de papel.</p>
+      </header>
+      <div class="tarjeta rv" data-tarjeta>
+        <div class="tarjeta__cab">
+          <img src="img/logo-negro.svg" alt="CREAM" width="130" height="30">
+          <span>1 café = 1 sello<br>10 cafés = 1 gratis</span>
+        </div>
+        <div class="tarjeta__grilla" data-grilla role="list" aria-label="Sellos de tu tarjetita"></div>
+        <p class="tarjeta__estado" data-sellos-txt aria-live="polite">Van 0 de 10.</p>
+        <p class="tarjeta__ayuda">Tocá un casillero vacío para probar el sello.</p>
+        <div class="tarjeta__premio" data-premio hidden>
+          <b>¡Te ganaste un cafecito!</b>
+          <span>Mostrá este código en la caja: <code data-codigo>CREAM-0000</code></span>
+          <button type="button" class="btn btn--azul btn--chico" data-sellos-reset>Arrancar otra tarjetita</button>
+        </div>
+      </div>
+      <img class="sellos__masc rv" src="img/mascota.webp" alt="" width="424" height="362" loading="lazy">
+    </div>
+  </section>
+
+  <!-- LA VEREDITA: mazo de fotos -->
+  <section class="sec veredita" id="veredita" aria-labelledby="ver-t">
+    <div class="envase veredita__in">
+      <header class="cab rv">
+        <p class="ceja">#LaVeredita</p>
+        <h2 id="ver-t" class="titulo">Las vibras de las CREAMs son de otro universo</h2>
+        <p class="cab__txt">Deslizá las fotos con el dedo. Es la gente que viene todos los días por su cafecito.</p>
+      </header>
+      <div class="mazo rv" data-mazo>
+        <div class="mazo__pila" data-pila>
+          <figure class="carta-f"><img src="img/gente-senor.webp" alt="Cliente con barba tomando un espresso" width="720" height="960" loading="lazy" decoding="async"><figcaption>Otro día en la ofi.</figcaption></figure>
+          <figure class="carta-f"><img src="img/gente-sonrisa.webp" alt="Cliente sonriendo con su vaso en la vereda" width="720" height="960" loading="lazy" decoding="async"><figcaption>Si no venís, vos te lo perdés.</figcaption></figure>
+          <figure class="carta-f"><img src="img/gente-perro.webp" alt="Clientas con su perro en la vereda" width="720" height="1278" loading="lazy" decoding="async"><figcaption>Se aceptan perros.</figcaption></figure>
+          <figure class="carta-f"><img src="img/barista-vaso.webp" alt="Barista sirviendo en un vaso de CREAM" width="720" height="1278" loading="lazy" decoding="async"><figcaption>Rutina mañanera.</figcaption></figure>
+          <figure class="carta-f"><img src="img/gente-vereda.webp" alt="Amigas tomando café en la vereda" width="720" height="960" loading="lazy" decoding="async"><figcaption>Nublado. Pero siempre está para un cafecito.</figcaption></figure>
+          <figure class="carta-f"><img src="img/gente-buzo.webp" alt="Cliente de buzo gris con su taza" width="720" height="961" loading="lazy" decoding="async"><figcaption>Con frío, con lluvia, con calor.</figcaption></figure>
+          <figure class="carta-f"><img src="img/gente-espalda.webp" alt="Barista de espaldas con el logo de CREAM" width="720" height="1280" loading="lazy" decoding="async"><figcaption>El uniforme.</figcaption></figure>
+          <figure class="carta-f"><img src="img/gente-clientes.webp" alt="Pareja de clientes con sus vasos" width="720" height="1278" loading="lazy" decoding="async"><figcaption>Gracias por elegirnos.</figcaption></figure>
+        </div>
+        <div class="mazo__ctrl">
+          <button type="button" class="redondo" data-mazo-prev aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <span class="mazo__n" data-mazo-n aria-live="polite">1 / 8</span>
+          <button type="button" class="redondo" data-mazo-next aria-label="Foto siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAFÉ POSTA: del grano a la taza -->
+  <section class="sec posta" id="cafe-posta" aria-labelledby="posta-t">
+    <div class="envase">
+      <header class="cab cab--claro rv">
+        <p class="ceja">Café posta</p>
+        <h2 id="posta-t" class="titulo">El café no es amargo, está mal preparado</h2>
+        <p class="cab__txt">Cada mañana calibramos el espresso. Esta es la receta de hoy.</p>
+      </header>
+      <div class="receta rv" data-receta>
+        <div><b data-cuenta="18">0</b><span>g de molienda</span></div>
+        <i aria-hidden="true">→</i>
+        <div><b data-cuenta="41">0</b><span>g en taza</span></div>
+        <i aria-hidden="true">·</i>
+        <div><b data-cuenta="31">0</b><span>segundos</span></div>
+      </div>
+    </div>
+    <div class="fila fila--pasos" data-arrastre>
+      <ol class="fila__pista">
+        <li class="paso rv" style="--d:0"><img src="img/proc-grano.webp" alt="Granos de café tostado" width="768" height="1364" loading="lazy" decoding="async"><div><span>01</span><h3>El grano</h3><p>Café de especialidad, tostado reciente. Nunca del montón.</p></div></li>
+        <li class="paso rv" style="--d:1"><img src="img/proc-calibra.webp" alt="Barista calibrando el espresso" width="800" height="1422" loading="lazy" decoding="async"><div><span>02</span><h3>La calibración</h3><p>Molienda, gramos y segundos. Todos los días, porque el clima cambia todo.</p></div></li>
+        <li class="paso rv" style="--d:2"><img src="img/proc-espresso.webp" alt="Espresso cayendo en un vaso sobre la balanza" width="800" height="1422" loading="lazy" decoding="async"><div><span>03</span><h3>El espresso</h3><p>Taza equilibrada, jugosa y frutal. Si no sale así, se tira y va de nuevo.</p></div></li>
+        <li class="paso rv" style="--d:3"><img src="img/proc-taza.webp" alt="Flat white con latte art" width="800" height="1067" loading="lazy" decoding="async"><div><span>04</span><h3>Tu taza</h3><p>Sin azúcar, probalo primero. El azúcar no endulza, tapa.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PICNIC Y EVENTOS -->
+  <section class="sec picnic" id="picnic" aria-labelledby="picnic-t">
+    <div class="envase picnic__in">
+      <header class="cab rv">
+        <p class="ceja ceja--azul">Picnic · el ciclo de CREAM</p>
+        <h2 id="picnic-t" class="titulo titulo--azul">Café, pastelería, laminados y DJ en vivo</h2>
+        <p class="cab__txt">Una vez por mes armamos un Picnic con amigos de la casa. Ya van cuatro ediciones. La próxima se anuncia acá y en el IG.</p>
+        <div class="picnic__ctas">
+          <a class="btn btn--azul" href="https://wa.me/5491100000000?text=Hola%20CREAM!%20Av%C3%ADsenme%20del%20pr%C3%B3ximo%20Picnic" target="_blank" rel="noopener">Avisame del próximo</a>
+          <a class="btn btn--linea-azul" href="https://www.instagram.com/cream.coffee.ba/" target="_blank" rel="noopener">Ver en Instagram</a>
+        </div>
+        <p class="picnic__extra">También damos <b>cursos de barista</b> (inicial y profesional). Escribinos para la próxima fecha.</p>
+      </header>
+      <div class="flyers" data-arrastre>
+        <div class="fila__pista">
+          <figure class="flyer rv" style="--r:-3deg;--d:0"><img src="img/picnic-3.webp" alt="Flyer Picnic 3ª edición, especial día de la primavera" width="900" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="flyer rv" style="--r:2deg;--d:1"><img src="img/picnic-2.webp" alt="Flyer Picnic 2ª edición, especial día del amigo" width="900" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="flyer rv" style="--r:-1.5deg;--d:2"><img src="img/picnic-1.webp" alt="Flyer Picnic 1ª edición en Ramos Mejía" width="900" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="flyer rv" style="--r:2.5deg;--d:3"><img src="img/picnic-nov.webp" alt="Flyer ¿Y si este 01 de noviembre hacemos un Picnic?" width="900" height="1200" loading="lazy" decoding="async"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALES -->
+  <section class="sec locales" id="locales" aria-labelledby="loc-t">
+    <div class="envase">
+      <header class="cab rv">
+        <p class="ceja">Las 2 CREAMs</p>
+        <h2 id="loc-t" class="titulo">Te queda cerca el mejor cafecito</h2>
+      </header>
+      <div class="locales__grilla">
+        <article class="local rv" style="--d:0">
+          <img src="img/local-devoto.webp" alt="Frente de CREAM Devoto con gente en la vereda" width="900" height="1199" loading="lazy" decoding="async">
+          <div class="local__txt">
+            <h3>Villa Devoto</h3>
+            <p>Av. Francisco Beiró 4475</p>
+            <p class="local__h">Lun a vie 8:30 a 19:30 · Sáb 10 a 19 · Dom cerrado</p>
+            <p class="local__solo">Solo acá: French toast, croissants y bowl de yogurt.</p>
+            <div class="local__ctas">
+              <a class="btn btn--amarillo" href="#carta" data-kit-sucursal="devoto">Retirar en Devoto</a>
+              <a class="btn btn--linea-azul" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Francisco+Beir%C3%B3+4475%2C+Villa+Devoto%2C+CABA" target="_blank" rel="noopener">Cómo llegar</a>
+            </div>
+          </div>
+        </article>
+        <article class="local rv" style="--d:1">
+          <img src="img/local-ramos.webp" alt="Frente azul de CREAM Ramos Mejía con mesas en la vereda" width="900" height="1125" loading="lazy" decoding="async">
+          <div class="local__txt">
+            <h3>Ramos Mejía</h3>
+            <p>Av. Gral. San Martín 355</p>
+            <p class="local__h">Lun a vie 8:30 a 19:30 · Sáb 10 a 19 · Dom cerrado</p>
+            <p class="local__solo">La primera CREAM, con su #Veredita.</p>
+            <div class="local__ctas">
+              <a class="btn btn--amarillo" href="#carta" data-kit-sucursal="ramos">Retirar en Ramos</a>
+              <a class="btn btn--linea-azul" href="https://www.google.com/maps/search/?api=1&amp;query=Av.+San+Mart%C3%ADn+355%2C+Ramos+Mej%C3%ADa" target="_blank" rel="noopener">Cómo llegar</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="nota rv">¿Delivery? Seguimos en PedidosYa: <a href="https://cream.taplink.ws/" target="_blank" rel="noopener">ver links de cada local</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="envase pie__in">
+    <img class="pie__logo" src="img/logo-amarillo.svg" alt="CREAM" width="520" height="120" loading="lazy">
+    <p class="pie__lema">Lo que otros no se animan a hacer.</p>
+    <div class="pie__cols">
+      <div><h3>Locales</h3><p>Av. Francisco Beiró 4475, Villa Devoto<br>Av. Gral. San Martín 355, Ramos Mejía</p></div>
+      <div><h3>Horarios</h3><p>Lunes a viernes 8:30 a 19:30<br>Sábados 10 a 19 · Domingos cerrado</p></div>
+      <div><h3>Seguinos</h3><p><a href="https://www.instagram.com/cream.coffee.ba/" target="_blank" rel="noopener">@cream.coffee.ba</a><br><a href="admin/" target="_blank" rel="noopener">Panel del dueño</a></p></div>
+    </div>
+    <img class="pie__masc" src="img/mascota.webp" alt="" width="424" height="362" loading="lazy">
+  </div>
+  <div class="pie__base envase">
+    <span>© CREAM café de especialidad</span>
+    <span class="credito">Sitio desarrollado por <a href="https://alejomfernandez.com.ar" target="_blank" rel="noopener">Alejo Martín Fernández</a></span>
+  </div>
+</footer>
+
+<script type="module">
+  import { initKit } from './kit/kit.js?v=2';
+  const TICKET = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5h14v19l-2.4-1.5-2.3 1.5-2.3-1.5-2.3 1.5-2.3-1.5L5 21.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  function escapar(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+  const kit = await initKit({
+    config: 'cliente.json',
+    carta: {
+      itemClass: 'it',
+      etiquetas: { top: { label: 'Más pedido' }, devoto: { label: 'Solo Devoto' } },
+      template: (p, ctx) => {
+        const precio = ctx.money(p.precio);
+        const tags = (p.etiquetas || []).map(t => t === 'top' ? '<span class="it__tag it__tag--top">Más pedido</span>' : t === 'devoto' ? '<span class="it__tag it__tag--devoto">Solo Devoto</span>' : '').join('');
+        return `${p.foto ? `<img class="it__foto" src="${escapar(ctx.asset(p.foto))}" alt="" width="112" height="140" loading="lazy" decoding="async">` : '<span class="it__foto it__foto--na" aria-hidden="true"><img src="img/logo-azul.svg" alt="" width="60" height="14"></span>'}
+          <div class="it__txt">
+            <h4>${escapar(p.nombre)}</h4>
+            ${p.descripcion ? `<p>${escapar(p.descripcion)}</p>` : ''}
+            ${tags ? `<div class="it__tags">${tags}</div>` : ''}
+            <div class="it__fila">
+              <span class="it__precio">${precio ?? '<span class="kit-price--na">Consultar</span>'}</span>
+              ${p.disponible === false ? '<span class="kit-badge kit-badge--off">Volaron</span>' : (p.precio != null ? `<div class="it__qty" data-kit-qty="${escapar(p.id)}"></div>` : '')}
+            </div>
+          </div>`;
+      },
+    },
+    carrito: { label: 'Tu ticket', icono: TICKET },
+  });
+  window.creamKit = kit;
+  document.dispatchEvent(new CustomEvent('cream:kit', { detail: kit }));
+</script>
+<script src="js/main.js?v=2" defer></script>
+</body>
+</html>
