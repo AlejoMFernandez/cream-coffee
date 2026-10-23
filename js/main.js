@@ -128,21 +128,86 @@
   /* ---------- filas deslizables: con el dedo es scroll nativo; con mouse, arrastrar ---------- */
   function filas() {
     $$('[data-arrastre]').forEach(function (f) {
-      var ini = 0, sl = 0, abajo = false, movio = false;
+      $$('img', f).forEach(function (i) { i.draggable = false; });
+      var abajo = false, movio = false, x0 = 0, sl0 = 0, ultX = 0, ultT = 0, vel = 0, raf = 0, pid = null, bloquearClick = false;
+      function maxScroll() { return f.scrollWidth - f.clientWidth; }
+      function destinos() {
+        var pad = parseFloat(getComputedStyle(f).scrollPaddingLeft) || 0;
+        var fr = f.getBoundingClientRect().left, cur = f.scrollLeft;
+        return $$('.fila__pista > *', f).map(function (it) {
+          return Math.max(0, Math.min(maxScroll(), cur + it.getBoundingClientRect().left - fr - pad));
+        });
+      }
+      function acomodar(dir) {
+        var cur = f.scrollLeft, ds = destinos(), mejor = ds[0] || 0, bd = 1e9;
+        ds.forEach(function (d) {
+          var dist = Math.abs(d - cur);
+          if (dir && (d - cur) * dir < -2) dist += 4000; // preferir el lado hacia el que venía
+          if (dist < bd) { bd = dist; mejor = d; }
+        });
+        animarA(mejor);
+      }
+      // scroll animado propio (no depende de scroll-behavior) y snap reactivado al terminar
+      function animarA(dest) {
+        cancelAnimationFrame(raf);
+        var desde = f.scrollLeft, t0 = performance.now(), dur = reduce ? 1 : Math.min(520, 180 + Math.abs(dest - desde) * .6);
+        (function paso(t) {
+          var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+          f.scrollLeft = desde + (dest - desde) * e;
+          if (p < 1) raf = requestAnimationFrame(paso);
+          else f.classList.remove('arrastrando');
+        })(t0);
+      }
       f.addEventListener('pointerdown', function (e) {
-        if (e.pointerType !== 'mouse' || e.target.closest('button, a')) return;
-        abajo = true; movio = false; ini = e.clientX; sl = f.scrollLeft;
+        if (e.pointerType !== 'mouse' || e.button !== 0 || e.target.closest('button, a, input')) return;
+        cancelAnimationFrame(raf);
+        abajo = true; movio = false; bloquearClick = false; pid = e.pointerId;
+        x0 = ultX = e.clientX; sl0 = f.scrollLeft; ultT = performance.now(); vel = 0;
+        e.preventDefault(); // sin arrastre de imagen ni selección de texto
       });
-      window.addEventListener('pointermove', function (e) {
+      f.addEventListener('pointermove', function (e) {
         if (!abajo) return;
-        var dx = e.clientX - ini;
-        if (Math.abs(dx) > 4 && !movio) { movio = true; f.classList.add('arrastrando'); }
-        if (movio) f.scrollLeft = sl - dx;
+        var dx = e.clientX - x0;
+        if (!movio && Math.abs(dx) > 4) {
+          movio = true; bloquearClick = true; f.classList.add('arrastrando');
+          try { f.setPointerCapture(pid); } catch (_) { /* nada */ }
+        }
+        if (!movio) return;
+        f.scrollLeft = sl0 - dx;
+        var t = performance.now(), dt = t - ultT;
+        if (dt > 0) vel = .75 * ((ultX - e.clientX) / dt) + .25 * vel; // px/ms
+        ultX = e.clientX; ultT = t;
       });
-      window.addEventListener('pointerup', function () {
+      function soltar() {
         if (!abajo) return; abajo = false;
-        if (movio) { f.classList.remove('arrastrando'); }
-      });
+        try { f.releasePointerCapture(pid); } catch (_) { /* nada */ }
+        if (!movio) return;
+        if (performance.now() - ultT > 90) vel = 0; // se quedó quieto antes de soltar
+        var v = vel * 16, dir = vel > 0 ? 1 : vel < 0 ? -1 : 0;
+        (function inercia() {
+          if (Math.abs(v) < .6 || f.scrollLeft <= 0 || f.scrollLeft >= maxScroll()) { acomodar(dir); return; }
+          f.scrollLeft += v; v *= .9;
+          raf = requestAnimationFrame(inercia);
+        })();
+      }
+      f.addEventListener('pointerup', soltar);
+      f.addEventListener('pointercancel', soltar);
+      f.addEventListener('click', function (e) { if (bloquearClick) { e.preventDefault(); e.stopPropagation(); bloquearClick = false; } }, true);
+      f.addEventListener('dragstart', function (e) { e.preventDefault(); });
+
+      // flechas para mouse (en el celu se desliza con el dedo)
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        var fl = document.createElement('div'); fl.className = 'fila__flechas';
+        fl.innerHTML = '<button type="button" class="redondo" data-dir="-1" aria-label="Anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="redondo" data-dir="1" aria-label="Siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>';
+        f.parentNode.insertBefore(fl, f.nextSibling);
+        fl.addEventListener('click', function (e) {
+          var b = e.target.closest('[data-dir]'); if (!b) return;
+          var dir = +b.dataset.dir, cur = f.scrollLeft, ds = destinos();
+          var sig = dir > 0 ? ds.filter(function (d) { return d > cur + 4; })[0] : ds.filter(function (d) { return d < cur - 4; }).pop();
+          if (sig == null) sig = dir > 0 ? maxScroll() : 0;
+          f.classList.add('arrastrando'); animarA(sig);
+        });
+      }
     });
   }
 
